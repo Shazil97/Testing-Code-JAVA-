@@ -73,6 +73,7 @@ class RectangleTest {
     }
 
         //TEST CODE 7 shorter way of writing valid test for width
+
         @org.junit.jupiter.api.Test
         void setWidth ()
         {
@@ -80,12 +81,26 @@ class RectangleTest {
           assertEquals(40,rectangle.getWidth());
         }
 
-        //TEST CODE 8 test code for low width
+        //TEST CODE 8 test code for low width shorter way
     @Test
     void setWidthInvalidLow()
     {
         assertThrows(IllegalArgumentException.class, ()->
                 rectangle.setWidth(0));
     }
+
+        //Test CODE 9 test code for Square of variables True
+    @Test
+    void isSquareTrue()
+    {
+        assertTrue(square.isSquare());
+    }
+        //Test Code 10 for Square of rectangle variable False
+    @Test
+    void isSquareFalse()
+    {
+        assertFalse(rectangle.isSquare());
+    }
+
     }
 
