@@ -65,7 +65,7 @@ class RectangleTest {
     void setLengthInvalidHigh() {
         try {
             rectangle.setLength(100);
-            fail("length of 0 should throw an Exception");
+            fail("length of 100 should throw an Exception");
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
