@@ -5,13 +5,14 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RectangleTest {
-
+        //GLOBAL VARIABLES
     private Rectangle rectangle;
     private Rectangle square;
 
 
     @org.junit.jupiter.api.BeforeEach
     void setUp(){
+        //NEW OBJECTS
         rectangle = new Rectangle(20,30);
         square = new Rectangle(20,20);
     }
@@ -49,18 +50,18 @@ class RectangleTest {
         assertEquals(75, rectangle.getLength());
     }
 
-    //TEST CODE 5
+    //TEST CODE 5 for low Length
     @Test
     void setLengthInvalidLow() {
         try {
             rectangle.setLength(0);
             fail("length of 0 should throw an Exception");
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+        } catch (IllegalArgumentException exception) {
+            System.out.println(exception.getMessage());
         }
     }
 
-    //TEST CODE 6
+    //TEST CODE 6 for high Length
     @Test
     void setLengthInvalidHigh() {
         try {
@@ -70,10 +71,21 @@ class RectangleTest {
             System.out.println(e.getMessage());
         }
     }
+
+        //TEST CODE 7 shorter way of writing valid test for width
         @org.junit.jupiter.api.Test
         void setWidth ()
         {
-
+          rectangle.setWidth(40);
+          assertEquals(40,rectangle.getWidth());
         }
+
+        //TEST CODE 8 test code for low width
+    @Test
+    void setWidthInvalidLow()
+    {
+        assertThrows(IllegalArgumentException.class, ()->
+                rectangle.setWidth(0));
+    }
     }
 
