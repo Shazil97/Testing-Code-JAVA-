@@ -41,12 +41,39 @@ class RectangleTest {
         assertEquals(expResult, rectangle.getArea());
     }
 
+    //TEST CODE 4
     @org.junit.jupiter.api.Test
+
     void setLength() {
+        rectangle.setLength(75);
+        assertEquals(75, rectangle.getLength());
     }
 
-    @org.junit.jupiter.api.Test
-    void setWidth() {
+    //TEST CODE 5
+    @Test
+    void setLengthInvalidLow() {
+        try {
+            rectangle.setLength(0);
+            fail("length of 0 should throw an Exception");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
-}
+    //TEST CODE 6
+    @Test
+    void setLengthInvalidHigh() {
+        try {
+            rectangle.setLength(100);
+            fail("length of 0 should throw an Exception");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+        @org.junit.jupiter.api.Test
+        void setWidth ()
+        {
+
+        }
+    }
+

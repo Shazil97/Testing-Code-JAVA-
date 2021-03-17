@@ -9,7 +9,10 @@ public class Rectangle {
     }
 
     public void setLength(double length) {
+        if(length>0 || length <100)
         this.length = length;
+        else
+            throw new IllegalArgumentException(" Length must be > 0 ");
     }
 
     public double getWidth() {
